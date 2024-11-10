@@ -1,0 +1,216 @@
+.imgPequeListado {
+    max-width: 20px;}
+body {
+    
+    background-image: url('https://static.vecteezy.com/system/resources/previews/003/127/954/non_2x/abstract-template-blue-background-white-squares-free-vector.jpg');}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-style: double;
+    border-width: 4px;
+    border-color: black;
+    background-color: #4a00ca;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 40px auto;
+    overflow: hidden;
+    height: 60px;}
+
+.menu > p, a {
+    font-family: "Roboto";
+    text-decoration: none;
+    font-size: 120%;}
+
+.menu > p, a:link {
+    color: rgb(255, 255, 255); }
+.menu > p, a:active {
+    color: rgb(255, 255, 255); }
+.menu > p, a:visited {
+    color: rgb(0, 215, 253);}
+.menu > p, a:hover {
+    color: rgb(253, 186, 0);}
+
+ .divMenu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 20%;
+    flex-grow: 1;
+    text-align: center;
+    border-style: double;
+    border-width: 4px;
+    border-color: black;
+    background-color: #7536e1;
+    border-radius: 8px;
+    height: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);}
+.divMenu:hover {
+    border-color: rgb(255, 115, 0);
+    background-color: #22005d;}
+button {
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #003976;;
+    color: white;}
+button:hover {
+    background-color: #001b38;}
+form {
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #808fff;
+    padding: 20px;
+    margin: 40px auto;
+    border-style: double;
+    border-width: 8px;
+    border-color: black;}
+h2, h3 {
+    text-align: center;
+}
+input,select {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.tableCitas {
+    width: 100%;
+    margin: 20px 0;
+    border-color: black;
+}
+
+.tableCitas td {   
+    text-align: center;
+    border: 2px solid #000000;
+    padding: 8px;
+}
+
+.tableCitas tr:hover {
+    background-color: #f79f52;
+}
+.imgelefante {
+    max-height: 300px;}
+
+.landingDiv {
+    text-align: center;}
+
+.tableCitas tr:first-of-type {
+    background-color: #000000;
+    color: white;}
+
+.tableCitas tr:first-of-type:hover {
+    background-color: #ff2f00;
+    color: rgb(0, 0, 0);}
+
+.ticketDiv {
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #808fff;
+    padding: 20px;
+    margin: 40px auto;
+    border-style: double;
+    border-width: 8px;
+    border-color: black;
+}
+
+input[type="button"], input[type="submit"] {
+    cursor: pointer;
+}
+
+input[type="button"]:hover{
+    background-color: #808fff;
+}
+
+.valido {
+    display: none;
+    color: green;
+    background-color: rgb(178, 255, 131);
+    font-size: 15px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    vertical-align: center;
+    margin:auto;
+    padding: auto;
+}
+
+.invalido {
+    display: none;
+    color: rgb(255, 0, 0);
+    background-color: rgb(0, 0, 0);
+    font-size: 15px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    vertical-align: center;
+    margin:auto;
+    padding: auto;
+}
+
+.campo {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #c2c9ff;
+}
+
+.etiqueta {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#listLavado td {
+    background-color: transparent;
+}
+
+#listLavado th {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#listLavado tbody tr:hover {
+    background-color: #ffa500; 
+    
+}
+
+#listLavado {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#listLavado td, #listLavado th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#loginGoogle {
+    color: white !important; 
+    text-decoration: none; 
+}
