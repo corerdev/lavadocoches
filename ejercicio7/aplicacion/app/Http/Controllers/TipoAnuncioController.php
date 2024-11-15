@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Citas;
-use App\Models\TipoLavado;
+use App\Models\TipoAnuncio;
 use Illuminate\Support\Str;
 use App\Rules\TipoVacio;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +12,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
-class TipoLavadoController extends Controller
+class TipoAnuncioController extends Controller
 {   //funcion para mostrar el lavado, que solo nos lo da si estamos logeados
     public function listLavado()
     {
@@ -28,7 +28,7 @@ class TipoLavadoController extends Controller
 
     public function eliminarLavado(Request $request) {
 
-        $lavado = TipoLavado::find($request->idLavado);
+        $lavado = TipoAnuncio::find($request->idLavado);
         $lavado->delete();
 
         return response()->json(['success'=>true]);
@@ -114,7 +114,7 @@ class TipoLavadoController extends Controller
         }
         else
         {
-            $lavado = new TipoLavado();
+            $lavado = new TipoAnuncio();
             $lavado->descripcion = $request->descripcion;
             $lavado->tiempo = $request->tiempo;
             $lavado->precio = $request->precio;

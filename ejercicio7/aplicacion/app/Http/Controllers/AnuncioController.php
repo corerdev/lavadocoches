@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Citas;
+use App\Models\Anuncio;
 
-use App\Models\TipoLavado;
+use App\Models\TipoAnuncio;
 use Illuminate\Support\Str;
 use App\Rules\TipoVacio;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 
 //use Illuminate\Support\Facades\DB;
 
-class CitasController extends Controller
+class AnuncioController extends Controller
 {
     public function index()
     {
@@ -23,20 +23,20 @@ class CitasController extends Controller
             return redirect()->route('usuarios.login')->with('success', 'No tienes permiso, identifícate.');
         }
 
-        $citas = Citas::all();
+        $Anuncio = Anuncio::all();
         
-        return view('citas.index', compact('citas'));
+        return view('Anuncio.index', compact('Anuncio'));
     }
 
     public function landing()
     {  
-        return view('citas.landing');
+        return view('Anuncio.landing');
     }
     
     public function create()
 
     {
-        return view('citas.create');
+        return view('Anuncio.create');
     }
     
     public function store(Request $request)
@@ -56,10 +56,10 @@ class CitasController extends Controller
             
         ]);
 
-        $lavado = TipoLavado::where('descripcion', $datos['tipo_lavado'])->first();
+        $lavado = TipoAnuncio::where('descripcion', $datos['tipo_lavado'])->first();
         $precio = $lavado->precio;
         $tiempoLavado = $lavado->tiempo;
-        $tipoLavado = $lavado->id;
+        $TipoAnuncio = $lavado->id;
         $nombreLavado = $lavado->descripcion;
 
         $horaMinuto = Carbon::createFromTime(rand(8, 15), rand(0,1)*30);
@@ -81,12 +81,12 @@ class CitasController extends Controller
         $datos['salida'] = Carbon::parse($datosEntrada->addMinute($tiempoLavado)->format('Y-m-d H:i:s'));
         
 
-        $datos['tipo_lavado'] = $tipoLavado;
+        $datos['tipo_lavado'] = $TipoAnuncio;
 
-        Citas::create($datos);
+        Anuncio::create($datos);
 
 
-        return view('citas.ticket', compact('datos', 'tiempoLavado', 'nombreLavado', 'llevaLlantasTicket'));
+        return view('Anuncio.ticket', compact('datos', 'tiempoLavado', 'nombreLavado', 'llevaLlantasTicket'));
     }
 
     //  --------------- Función de la API  --------------------------------------
@@ -131,10 +131,10 @@ class CitasController extends Controller
             ], 401);
         }
         
-        $lavado = TipoLavado::where('descripcion', $datosApi['tipo_lavado'])->first();
+        $lavado = TipoAnuncio::where('descripcion', $datosApi['tipo_lavado'])->first();
         $precio = $lavado->precio;
         $tiempoLavado = $lavado->tiempo;
-        $tipoLavado = $lavado->id;
+        $TipoAnuncio = $lavado->id;
         $nombreLavado = $lavado->descripcion;
 
         $horaMinuto = Carbon::createFromTime(rand(8, 15), rand(0,1)*30);
@@ -163,7 +163,7 @@ class CitasController extends Controller
         $entradaBonita = $datosEntrada->format('Y-m-d H:i');
         $datosApi['salida'] = Carbon::parse($datosEntrada->addMinute($tiempoLavado)->format('Y-m-d H:i:s'));
         $salidaBonita = $datosApi['salida']->format('Y-m-d H:i');
-        $datosApi['tipo_lavado'] = $tipoLavado;
+        $datosApi['tipo_lavado'] = $TipoAnuncio;
 
         // En esta variable guardamos todos los datos que tenemos que mandar por la API
 
@@ -181,7 +181,7 @@ class CitasController extends Controller
 
         // Sabiendo que, llegado a este punto, el validator ha funcionado, simplemente hacemos el create y mandamos la respuesta
      
-        Citas::create($datosApi);
+        Anuncio::create($datosApi);
 
         return response()->json([
             'esValido' => true,

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Citas extends Model
+class Anuncio extends Model
 {
 
     //No mucho que comentar aqui, llenamos tanto los modelos con las opcioens necesarias segun la tabla
@@ -19,7 +19,7 @@ class Citas extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'entrada', 'salida', 'nombre', 'telefono', 'coche', 'matricula', 'tipo_lavado', 'llantas', 'precio'
+        'titulo', 'descripcion', 'juego', 'localizacion', 'medio', 'fondo'
     ];
 
     public $incrementing = false;
@@ -29,6 +29,6 @@ class Citas extends Model
 
     public function tipoLavado(): BelongsTo
     {
-        return $this->belongsTo(TipoLavado::class, 'tipo_lavado', 'id');
+        return $this->belongsTo(TipoAnuncio::class, 'tipo_lavado', 'id');
     }
 }
